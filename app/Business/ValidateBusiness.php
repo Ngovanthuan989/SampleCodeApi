@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Log;
 class ValidateBusiness
 {
 
+    // validate email
     public function validateEmail($email)
     {
         $responseHelper = new ResponseHelper();
@@ -55,6 +56,8 @@ class ValidateBusiness
         return $response;
     }
 
+    // validate name
+
     public function validateFullname($fullname)
     {
         $responseHelper = new ResponseHelper();
@@ -64,12 +67,6 @@ class ValidateBusiness
             $response = $responseHelper->internalResponse($responseHelper::CODE_FAIL, 'Khong gui ten');
             goto end;
         }
-
-    //    if(CommonHelper::hasDigit($fullname)) {
-    //        Log::info('Message: Ten chua ki tu so');
-    //        $response = $responseHelper->internalResponse($responseHelper::CODE_FAIL, 'Ten chua ki tu so');
-    //        goto end;
-    //    }
 
         if (CommonHelper::checkSpecialCharacter($fullname)) {
             Log::info('Message: Ten chua ki tu dac biet');
@@ -89,6 +86,7 @@ class ValidateBusiness
         return $response;
     }
 
+    // validate phone
     public function validatePhone($phone, $customerId = null)
     {
         $responseHelper = new ResponseHelper();
