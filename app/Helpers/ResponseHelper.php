@@ -15,14 +15,14 @@ class ResponseHelper
     {
         if (empty($data)){
             $response = [
-                'ResponseCode' => $code,
+                'ResponseCode'    => $code,
                 'ResponseMessage' => $message,
             ];
         } else {
             $response = [
-                'ResponseCode' => $code,
+                'ResponseCode'    => $code,
                 'ResponseMessage' => $message,
-                'ResponseData' => $data
+                'ResponseData   ' => $data
             ];
         }
 
@@ -34,7 +34,7 @@ class ResponseHelper
         $msgArr = [
             self::CODE_SUCCESS => 'Success',
             self::CODE_PENDING => 'Pending',
-            self::CODE_FAIL => 'Fail',
+            self::CODE_FAIL    => 'Fail',
         ];
         return $msgArr[$code];
     }

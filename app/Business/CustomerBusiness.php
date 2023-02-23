@@ -18,7 +18,7 @@ class CustomerBusiness
     private $responseHelper;
     public function __construct(CustomerRepository $customerRepository, ResponseHelper $responseHelper)
     {
-        $this->customerRepo = $customerRepository;
+        $this->customerRepo   = $customerRepository;
         $this->responseHelper = $responseHelper;
     }
 
